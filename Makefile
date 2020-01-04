@@ -1,4 +1,4 @@
-FIGURES = factors.png f1-f2-loadings.png f1-f2-scores.png
+FIGURES = factors-loadings.png f1-f2-loadings.png f1-f2-scores.png
 
 $(FIGURES) results.txt: vote-2019-002-factanal.r vote-2019-002.csv
 	Rscript vote-2019-002-factanal.r  | sed 's/,  /,\n/' > results.txt
