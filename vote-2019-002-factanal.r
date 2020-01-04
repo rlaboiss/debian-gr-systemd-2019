@@ -2,6 +2,7 @@ dat <- read.csv ('vote-2019-002.csv')
 
 fa <- factanal (~ F + B + A + D + H + E + G + fd, 4, dat, scores = "regression",
                 rotation = "promax")
+show (fa)
 ld <- fa$loadings
 
 png (file = "f1-f2-loadings.png", , width = 400, height = 400)

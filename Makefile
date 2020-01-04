@@ -1,7 +1,7 @@
 FIGURES = factors.png f1-f2-loadings.png f1-f2-scores.png
 
-$(FIGURES): vote-2019-002-factanal.r vote-2019-002.csv
-	Rscript vote-2019-002-factanal.r
+$(FIGURES) results.txt: vote-2019-002-factanal.r vote-2019-002.csv
+	Rscript vote-2019-002-factanal.r  | sed 's/,  /,\n/' > results.txt
 
 vote-2019-002.csv: process-tally.py vote_002_tally.txt
 	python3 process-tally.py < vote_002_tally.txt
