@@ -1,4 +1,4 @@
-factors.pdf f1-f2-loadings.pdf: vote-2019-002-factanal.r vote-2019-002.csv
+factors.png f1-f2-loadings.png: vote-2019-002-factanal.r vote-2019-002.csv
 	Rscript vote-2019-002-factanal.r
 
 vote-2019-002.csv: process-tally.py vote_002_tally.txt
@@ -13,8 +13,8 @@ dist: veryclean
 
 .PHONY: clean
 clean:
-	rm -f vote-2019-002.csv *.pdf
+	rm -f vote-2019-002.csv
 
 .PHONY: veryclean
 veryclean: clean
-	rm -f vote_002_tally.txt
+	rm -f vote_002_tally.txt *.png
