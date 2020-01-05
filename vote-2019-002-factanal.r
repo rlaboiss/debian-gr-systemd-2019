@@ -34,7 +34,7 @@ for (i in seq (1, 4)) {
     max.x <- max (ds$x)
     max.y <- max (ds$y)
     plot (ds$x, ds$y, ylim = c (-0.2, 1) * max.y, type = "l", las = 1,
-          cex.axis = 1.5, cex.names = 1.5, ylab = "", xlab = "")
+          cex.axis = 1.5, ylab = "", xlab = "")
     abline (h = 0, col = "gray")
     points (sc[,3], runif (nrow (sc), -0.15 * max.y, -0.05 * max.y), pch = 19,
             col = "#00000080", cex = 0.4)
