@@ -1,0 +1,321 @@
+#+TITLE: Statistical analysis of the Debian General Resolution “Init systems and systemd” 2019
+
+* Author
+
+Copyright © 2020 Rafael Laboissière <rafael@debian.org>
+
+Released under the terms of the GNU General Public License, version 3 or
+later.  No warranties.
+
+* Abstract
+
+In this study, we present a statistical analysis of the Debian General
+Resolution: “Init systems and systemd” 2019.  Exploratory Factorial
+Analysis was applied to the tally data, considering each option as a
+variable and the ranks cast in the ballot as the values for each option.
+The goal of this study is to understand both the structure of the choices
+made by the Debian Developers community and how the available options were
+perceived, in relation to each other.  Four factors were obtained from the
+analysis.  The first one can be interpreted as “systemd vs. multiple init
+implementations”.  The second one could be related to the “desire for
+community cohesion”.  The third one follows the result of the Condorcet
+outcome.  Polarization of the community is particularly evidenced by the
+distribution of scores along the third factor.  This study sheds some
+lights on the subtleties to the behavior of the voters and go beyond the
+Condorcet result based on the outranking matrix.
+
+* Introduction
+
+At the end of 2019, a [[https://www.debian.org/vote/2019/vote_002][General Resolution regarding Init systems and systemd
+in Debian]] in Debian was dicussed and voted by the Debian developers.  The
+proposals and amendments period ended on 2019-11-16, the discussion period
+lasted until 2019-11-22 and the voting period started on 2019-12-07 and
+finished on 2019-12-27.
+
+The proposals under vote were the following:
+
++ *F*: [[https://www.debian.org/vote/2019/vote_002#textf][Focus on systemd]]
++ *B*: [[https://www.debian.org/vote/2019/vote_002#textb][Systemd but we support exploring alternatives]]
++ *A*: [[https://www.debian.org/vote/2019/vote_002#texta][Support for multiple init systems is Important]]
++ *D*: [[https://www.debian.org/vote/2019/vote_002#texta][Support non-systemd systems, without blocking progress]]
++ *H*: [[https://www.debian.org/vote/2019/vote_002#texth][Support portability, without blocking progress]]
++ *E*: [[https://www.debian.org/vote/2019/vote_002#texte][Support for multiple init systems is Required]]
++ *G*: [[https://www.debian.org/vote/2019/vote_002#textg][Support portability and multiple implementations]]
+
+Together with those proposals, the voters could also choose the option
+“further discussion” (*fd* hereafter). Sam Hartman wrote a [[https://hartmans.livejournal.com/99642.html][voting guide]],
+focusing on the technical effects of each proposal.
+
+Debian uses the [[http://en.wikipedia.org/wiki/Condorcet_method][Condorcet method]] for voting general resolutions.  In
+casting their votes, voters ranked the eight options above, possibly with
+ties.  Considering all possible two-way races between options, the
+Condorcet winner, if there is one, is the one that can beat each other
+candidate in a two-way race with that candidate.
+
+The [[https://www.debian.org/vote/2019/vote_002#outcome][outcome]] of the vote shows the following ordering of the options,
+starting with the winner: *B*, *F*, *H*, *D*, *G*, *A*, *fd*, and *E*.
+
+As with many technical issues related to packaging directives in Debian,
+the debate [[https://lists.debian.org/debian-vote/2019/11/threads.html][has been intense]] within the debian-vote mailing list and also
+elsewhere (debian-devel and debian-project mailing lists).  The goal of the
+present study is not to discuss the merit of each proposal but rather to
+understand, thanks to a statistical analysis, the structure of the vote
+within the Debian Developers community.  In other words, I seek to (1)
+understand how the different options were perceived in relation to each
+other, (2) verify whether some options are perceived as redundant with
+others, and (3) explain the collective behavior of the community with a
+limited amount of factors.
+
+This was accomplished by applying [[https://en.wikipedia.org/wiki/Exploratory_factor_analysis][Exploratory Factor Analysis]] (EFA) to the
+tally data.  EFA is a statistical method aimed at discovering the
+underlying structure of a set of variables (the ballot options in our
+case), yielding a reduced amount of (hopefully sensible) latent /factors/.
+We used here the rank of each option as the scale for measuring its
+importance in each ballot.  The final result of the EFA is twofold: first,
+a limited set of factors on which each variable has a “loading” (factors
+are linear combination of the variables) and, second, the predicted scores
+of each ballot along the factor axes.
+
+* Methods
+
+*** Ballot pre-processing
+
+The ballots were obtained from the [[https://www.debian.org/vote/2019/vote_002_tally.txt][tally sheet]], which contains the 425
+valid votes.
+
+The instructions for casting the vote were the following:
+
+#+begin_quote
+There are 8 choices in the form, which you may rank with numbers between 1
+and 8. In the brackets next to your preferred choice, place a 1.  Place a 2
+in the brackets next to your next choice. Continue until you reach your
+last choice. Do not enter a number smaller than 1 or larger than 8.
+#+end_quote
+
+In the EFA done in the present study, the value cast for each option can be
+seen as the “note” for that option and the data is appropriate for EFA.
+The values are bounded between 1 to 8 and each ballot contains,
+necessarily, a variable with value equal to 1.  This somehow “normalizes”
+the data, in the sens that the voter preferred option has always the value
+1 and all the other options are judged relatively to it.  Notice that the
+voting software would consider ballots like =12222222= and =18888888= as
+equivalent, but our analysis will consider then different, reflecting the
+possible intention of the voter (in the case of ballot =18888888=, options
+#2 to #8 have a much lower value, in respect to option #1, than in ballot
+=12222222=).
+
+Instructions regarding the unranked choices were as follows:
+
+#+begin_quote
+You may skip numbers, leave some choices unranked, and rank options
+equally. Unranked choices are considered equally the least desired
+choices, and ranked below all ranked choices.
+#+end_quote
+
+In the present study, unranked options have a value equal to the least
+ranked value minus one.  So, for instance, the ballot =1234----= became
+=12345555= in our study.  As an exception, if the least value assigned in
+the ballot is 8, then the unranked options are also equal to 8.
+
+*** Exploratory Factorial Analysis
+
+The EFA results was done with the function =factanal= of the R statistical
+software.  The factor axes were transformed by using the non-orthogonal
+=promax= rotation method.  Non-orthogonal rotation of the axis are more
+appropriate than orthogonal rotation when factors are correlated.
+Moreover, non-orthogonal rotations yield higher eigenvalues for the factors
+and may improve the interpretation of the results, since variables may
+become more isolated among the factors.
+
+With eight variables in the analysis, the function =factanal= limits the
+number of factors in the range 2 to 4.  We will use the maximum number of 4
+factors in the analysis shown below.
+
+* Results
+
+The output of the R code is the following:
+
+#+begin_example
+**** Exploratory factorial analysis
+
+Call:
+factanal(x = ~F + B + A + D + H + E + G + fd, factors = 4, data = dat,
+   scores = "regression", rotation = "promax")
+
+Uniquenesses:
+    F     B     A     D     H     E     G    fd
+0.056 0.276 0.005 0.414 0.005 0.218 0.748 0.568
+
+Loadings:
+   Factor1 Factor2 Factor3 Factor4
+F   0.937          -0.139  -0.117
+B   0.622          -0.412   0.243
+A  -0.109                   1.010
+D           0.735
+H           1.004
+E                   0.872   0.104
+G           0.153   0.380
+fd  0.628           0.400
+
+               Factor1 Factor2 Factor3 Factor4
+SS loadings      1.682   1.589   1.263   1.115
+Proportion Var   0.210   0.199   0.158   0.139
+Cumulative Var   0.210   0.409   0.567   0.706
+
+Factor Correlations:
+        Factor1 Factor2 Factor3 Factor4
+Factor1  1.0000  0.0576  -0.498   0.333
+Factor2  0.0576  1.0000   0.237   0.085
+Factor3 -0.4977  0.2374   1.000  -0.252
+Factor4  0.3331  0.0850  -0.252   1.000
+
+Test of the hypothesis that 4 factors are sufficient.
+The chi square statistic is 10.1 on 2 degrees of freedom.
+The p-value is 0.0064
+
+***** Correlation between factors #1 and #2
+
+	Pearson's product-moment correlation
+
+data:  sc[, 1] and sc[, 2]
+t = 11.212, df = 423, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.4018258 0.5487867
+sample estimates:
+      cor
+0.4786518
+#+end_example
+
+We see that the four factors explain 70.6% of the variance.  Even though
+this is still not enough for significantly accounting for the variance in
+the data ($\chi^2$[2] = 10.1, p < 0.01), we will stick to the four factors,
+since interesting and sensible interpretations can be inferred from them.
+
+A graphic depiction of the resulting factors is shown in the figure
+below. The heights of the bars are loading values for each option (notice
+that entries with small absolute values are not shown in the loading matrix
+in the textual result above).
+
+[[./factors-loadings.png]]
+
+The projection of the loading onto the bidimensional plane defined by
+factors #1 and #2 is shown in the figure below.
+
+[[./f1-f2-loadings.png]]
+
+The predicted scores along factors #1 and #2 for each voter is shown in the
+figure below.  Each point correspond to a ballot.  They are represented
+with transparent dots, such that points that appear darker correspond to
+the superposition of two or more points (the more superimposed points, the
+darker the dot becomes).
+
+[[./f1-f2-scores.png]]
+
+Probability densities of the scores along each factor axis are shown in the
+figure below.  The horizontal axes represent the factor axis, while the
+vertical axis represent the probability density.  The projected score are
+show as a scatter plot below the horizontal axis.  For the sake of
+visualization clarity, random jitter has been added vertically to each
+point.
+
+[[./factors-scores.png]]
+
+* Discussion
+
+*** Grouping of the options
+
+From the loading matrix, we can see that the following options can be
+grouped together: *F+B*, *D+H* and *G+E*.  This is not surprising, because
+both options in each pair have similarities in their proposals.
+Accordingly, the Debian developers who participated to the vote seem to
+have perceived those pairs as similar options.
+
+*A* and *fd* seem to have be considered as isolated options, as regards the
+EFA results.
+
+*** Interpretation of the factors
+
+The first factor (21% of explained variance), which has high loadings for
+*F* and *B* options, can be regard as the “systemd vs. multiple init
+implementations” factor.  Notice that option *F* (which proposes to focus
+on systemd), has higher loading that *B* (which is less radical than *F*)
+along this first factor.  It is also interesting to note that option *fd*
+(further discussion) has also a high loading on this factor.  This means
+that the, along this factor, voters tended to get a strong opinion either
+rejecting or selecting options *F* and *B* and, at the same time,
+considering unacceptable the remaining options.
+
+The second factor (19.9% of explained variance) opposes options *D* and *H*
+to the other.  Those two options seem to be less divisive than the others,
+in particular options *F* and *E*.  We could interpret factor #2 as the
+importance that one attaches, or not, to the cohesion of the community, by
+placing options *D* and *H* either higher of lower, respectively, as
+regards the other options.
+
+The third factor (15.8% of explained variance) reflects almost perfectly
+the outcome of the vote, options *B* and *E* being at opposite ends. The
+loading values determines the ordering *B*, *F*, *H*, *D*, *A*, *G*, *fd*,
+and *E*.  The only difference with the vote outcome is the flipping between
+options *A* and *G*. It is interesting to notice, though, that option *G*
+beat option *A* by only 11 votes. Moreover, options *H* and *D* beat option
+*D* more severely (155 and 168 votes, respectively) than option *A* (102
+and 122 votes, respectively).  We could then call it as the “GR outcome”
+factor.
+
+The fourth factor (13.9% of explained variance) implies only the *A* option
+and reflects how high or low this option was ranked by the voters.  We
+could call it the “proposal *A*” factor.
+
+*** Correlation of the factors
+
+As the scatter plot of scores on the factor#1 × factor#2 plane shows, those
+two factors are correlated (R = 0.48, t[423] = 11.2, p < 0.001). This
+justifies the use of the non-orthogonal rotation in the EFA.  Notice that
+voters who scored high in the “systemd-preferred” options (negative value
+for factor #1) also scored high in the “community cohesion” direction
+(negative value for factor #2).
+
+*** Polarization of the community
+
+Finally, the behavior of the voters is also reflected in the distribution
+of scores along the factor axes.  For instance, the score along factor#3
+may reflect the amount of agreement with the final outcome of the vote.
+The higher this score is, the more the voter have put option *B* close to
+value 1 and option *E* close to value 8.  We clearly see a bimodal
+distribution with peaks in the negative and positive sides of the factor
+axis.  This is an indication of polarization of the community around the
+issue at stake.  Notice that the distribution along factor #1 has also a
+bimodal distribution, while distribution of the scores along factors #2 and
+#4 are more unimodal .
+
+* Conclusion
+
+The tally sheet of a Condorcet voting system allows for a multifaceted
+interpretation of vote results.  The analysis done in the present study
+allows us to go beyond the crude result of the outranking matrix and to
+understand the subtleties in the behavior of the voters of the Debian
+General Resolution: “Init systems and systemd.”
+
+* Acknowledgments
+
+Many thanks to Sébastien Villemot for his thoughtful comments and
+suggestions for improvement of the present study.
+
+* Code
+
+The code for producing the analysis is available in this Git repository.
+The pre-processing of the tally sheet is done by the Python script
+[[file:process-tally.py][process-tally.py]] and the factorial analysis and plotting of the results in
+the R script [[file:vote-2019-002-factanal.r][vote-2019-002-factanal.r]].  There is also a [[file:Makefile][Makefile]] for
+automating the process.
+
+# Local Variables:
+# ispell-local-dictionary: "american"
+# eval: (flyspell-mode)
+# End:
+
+#+STARTUP: overview
+#+STARTUP: hidestars
+
+#  LocalWords:  Sébastien Villemot EFA unranked jitter loadings
