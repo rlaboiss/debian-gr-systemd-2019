@@ -23,7 +23,7 @@ png (file = "f1-f2-scores.png", width = 400, height = 400)
 sc <- fa$scores
 par (mar = c (5, 4, 0, 0) + 0.2)
 plot (sc [, 1], sc [, 2], pch = 19, col = "#00000080", las = 1,
-      xlab = "factor #1", ylab ="factor #2")
+      xlab = "factor #1", ylab ="factor #2", cex.axis = 1.5)
 dummy <- dev.off ()
 
 png (file = "factors-scores.png", width = 600, height = 400)
