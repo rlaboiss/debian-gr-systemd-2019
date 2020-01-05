@@ -30,6 +30,7 @@ plot (sc [, 1], sc [, 2], pch = 19, col = "#00000080", las = 1,
 dummy <- dev.off ()
 
 png (file = "factors-scores.png", width = 600, height = 400)
+set.seed (0)
 layout (matrix (seq (1, 4), nrow = 2, byrow = TRUE))
 for (i in seq (1, 4)) {
     par (mar = c (5, 4, 0, 0) + 0.3)
