@@ -189,7 +189,7 @@ sample estimates:
 
 We see that the four factors explain 70.6% of the variance.  Even though
 this is still not enough for significantly accounting for the variance in
-the data ($\chi^2$[2] = 10.1, p < 0.01), we will stick to the four factors,
+the data (χ²[2] = 10.1, p < 0.01), we will stick to the four factors,
 since interesting and sensible interpretations can be inferred from them.
 
 A graphic depiction of the resulting factors is shown in the figure
