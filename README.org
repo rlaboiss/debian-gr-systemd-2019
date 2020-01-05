@@ -136,7 +136,7 @@ factors in the analysis shown below.
 The output of the R code is the following:
 
 #+begin_example
-**** Exploratory factorial analysis
+===== Exploratory factorial analysis
 
 Call:
 factanal(x = ~F + B + A + D + H + E + G + fd, factors = 4, data = dat,
@@ -173,7 +173,7 @@ Test of the hypothesis that 4 factors are sufficient.
 The chi square statistic is 10.1 on 2 degrees of freedom.
 The p-value is 0.0064
 
-***** Correlation between factors #1 and #2
+===== Correlation between factors #1 and #2
 
 	Pearson's product-moment correlation
 
