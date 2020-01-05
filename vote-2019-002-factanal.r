@@ -2,7 +2,10 @@ dat <- read.csv ('vote-2019-002.csv')
 
 fa <- factanal (~ F + B + A + D + H + E + G + fd, 4, dat, scores = "regression",
                 rotation = "promax")
+
+cat ("***** Exploratory factorial analysis\n")
 show (fa)
+
 ld <- fa$loadings
 
 png (file = "f1-f2-loadings.png", , width = 400, height = 400)
@@ -41,3 +44,6 @@ for (i in seq (1, 4)) {
     text (max.x, max.y, sprintf ("#%d", i), adj = c (1, 1), cex = 2)
 }
 dummy <- dev.off ()
+
+cat ("\n***** Correlation between factors #1 and #2\n")
+show (cor.test (sc [, 1], sc [, 2]))
