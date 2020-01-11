@@ -300,7 +300,8 @@ General Resolution: “Init systems and systemd.”
 * Acknowledgments
 
 Many thanks to Sébastien Villemot for his thoughtful comments and
-suggestions for improvement of the present study.
+suggestions for improvement of the present study, as well as for revising
+the final text.
 
 * Code
 
