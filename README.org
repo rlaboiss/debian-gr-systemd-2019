@@ -284,7 +284,7 @@ we could also consider that my previous interpretation of #2 as being the
 “community cohesion” factor is not a fully precise depiction of the
 situation.
 
-Just for the sake of clarity, let us explain the sens of negative values in
+Just for the sake of clarity, let us explain the sense of negative values in
 the scores. Let us take, for instance, factor #2, which has positive values
 for options *D* and *H*.  Voters that have negative values along #2 would
 have put options *D* and *H* below their mean values, i.e. towards he
