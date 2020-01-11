@@ -276,6 +276,12 @@ voters who scored high in the “systemd-preferred” options (negative value
 for factor #1) also scored high in the “community cohesion” direction
 (negative value for factor #2).
 
+Just for the sake of clarity, let us explain the sens of negative values in
+the scores. Let us take, for instance, factor #2, which has positive values
+for options *D* and *H*.  Voters that have negative values along #2 would
+have put options *D* and *H* below their mean values, i.e. towards he
+value 1.
+
 *** Polarization of the community
 
 Finally, the behavior of the voters is also reflected in the distribution
