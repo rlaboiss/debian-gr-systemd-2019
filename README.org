@@ -21,7 +21,7 @@ implementations”.  The second one could be related to the “desire for
 community cohesion”.  The third one follows the result of the Condorcet
 outcome.  Polarization of the community is particularly evidenced by the
 distribution of scores along the third factor.  This study sheds some
-lights on the subtleties to the behavior of the voters and go beyond the
+lights on the subtleties of the voters’ behavior and goes beyond the
 Condorcet result based on the outranking matrix.
 
 * Introduction
@@ -96,7 +96,7 @@ In the EFA done in the present study, the value cast for each option can be
 seen as the “note” for that option and the data is appropriate for EFA.
 The values are bounded between 1 to 8 and each ballot contains,
 necessarily, a variable with value equal to 1.  This somehow “normalizes”
-the data, in the sens that the voter preferred option has always the value
+the data, in the sense that the voter’s preferred option has always the value
 1 and all the other options are judged relatively to it.  Notice that the
 voting software would consider ballots like =12222222= and =18888888= as
 equivalent, but our analysis will consider then different, reflecting the
@@ -205,7 +205,7 @@ factors #1 and #2 is shown in the figure below.
 [[./f1-f2-loadings.png]]
 
 The predicted scores along factors #1 and #2 for each voter is shown in the
-figure below.  Each point correspond to a ballot.  They are represented
+figure below.  Each point corresponds to a ballot.  They are represented
 with transparent dots, such that points that appear darker correspond to
 the superposition of two or more points (the more superimposed points, the
 darker the dot becomes).
@@ -214,8 +214,8 @@ darker the dot becomes).
 
 Probability densities of the scores along each factor axis are shown in the
 figure below.  The horizontal axes represent the factor axis, while the
-vertical axis represent the probability density.  The projected score are
-show as a scatter plot below the horizontal axis.  For the sake of
+vertical axis represent the probability density.  The projected scores are
+shown as a scatter plot below the horizontal axis.  For the sake of
 visualization clarity, random jitter has been added vertically to each
 point.
 
@@ -247,7 +247,7 @@ rejecting or selecting options *F* and *B* and, at the same time,
 considering unacceptable the remaining options.
 
 The second factor (19.9% of explained variance) opposes options *D* and *H*
-to the other.  Those two options seem to be less divisive than the others,
+to the others.  Those two options seem to be less divisive than the others,
 in particular options *F* and *E*.  We could interpret factor #2 as the
 importance that one attaches, or not, to the cohesion of the community, by
 placing options *D* and *H* either higher of lower, respectively, as
@@ -258,7 +258,7 @@ the outcome of the vote, options *B* and *E* being at opposite ends. The
 loading values determines the ordering *B*, *F*, *H*, *D*, *A*, *G*, *fd*,
 and *E*.  The only difference with the vote outcome is the flipping between
 options *A* and *G*. It is interesting to notice, though, that option *G*
-beat option *A* by only 11 votes. Moreover, options *H* and *D* beat option
+beats option *A* by only 11 votes. Moreover, options *H* and *D* beat option
 *D* more severely (155 and 168 votes, respectively) than option *A* (102
 and 122 votes, respectively).  We could then call it as the “GR outcome”
 factor.
@@ -281,7 +281,7 @@ for factor #1) also scored high in the “community cohesion” direction
 Finally, the behavior of the voters is also reflected in the distribution
 of scores along the factor axes.  For instance, the score along factor#3
 may reflect the amount of agreement with the final outcome of the vote.
-The higher this score is, the more the voter have put option *B* close to
+The higher this score is, the more the voters have put option *B* close to
 value 1 and option *E* close to value 8.  We clearly see a bimodal
 distribution with peaks in the negative and positive sides of the factor
 axis.  This is an indication of polarization of the community around the
