@@ -7,6 +7,8 @@ Copyright © 2020 Rafael Laboissière <rafael@debian.org>
 Released under the terms of the GNU General Public License, version 3 or
 later.  No warranties.
 
+[[https://doi.org/10.5281/zenodo.3605064][https://zenodo.org/badge/DOI/10.5281/zenodo.3605064.svg]]
+
 * Abstract
 
 In this study, we present a statistical analysis of the Debian General
