@@ -325,7 +325,7 @@ General Resolution: “Init systems and systemd.”
 
 Many thanks to Sébastien Villemot for his thoughtful comments and
 suggestions for improvement of the present study, as well as for revising
-the final text.
+the final text.  Thanks to Gregor Herrmann for fixing typos in the code.
 
 * Code
 
@@ -343,4 +343,5 @@ automating the process.
 #+STARTUP: overview
 #+STARTUP: hidestars
 
-#  LocalWords:  Sébastien Villemot EFA unranked jitter loadings
+#  LocalWords:  Sébastien Villemot EFA unranked jitter loadings Gregor
+#  LocalWords:  Herrmann
