@@ -9,7 +9,7 @@ vote = pd.DataFrame (columns = ['voter', 'F', 'B', 'A', 'D', 'H', 'E', 'G', 'fd'
 for line in sys.stdin.readlines ():
     m = re.match ('^V: ([-1-8]+)\s+(\w+).*', line)
     if m:
-        ## Get voter and thei choices
+        ## Get voter and their choices
         choices = list (m.group (1))
         voter = m.group (2)
         ## Get minimum and maximum values
@@ -24,7 +24,7 @@ for line in sys.stdin.readlines ():
                     maxv = ival
             except ValueError:
                 pass
-        ## Compuite the rank for the uinlisted options
+        ## Compute the rank for the unlisted options
         unlist_rank = min ([8, maxv + 1])
         for i in range (len (choices)):
             if choices [i] == '-':
