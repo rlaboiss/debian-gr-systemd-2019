@@ -27,7 +27,7 @@ Condorcet result based on the outranking matrix.
 * Introduction
 
 At the end of 2019, a [[https://www.debian.org/vote/2019/vote_002][General Resolution regarding Init systems and systemd
-in Debian]] in Debian was dicussed and voted by the Debian developers.  The
+in Debian]] in Debian was discussed and voted by the Debian developers.  The
 proposals and amendments period ended on 2019-11-16, the discussion period
 lasted until 2019-11-22 and the voting period started on 2019-12-07 and
 finished on 2019-12-27.
