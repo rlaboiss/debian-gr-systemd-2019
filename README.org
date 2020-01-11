@@ -303,6 +303,16 @@ issue at stake.  Notice that the distribution along factor #1 has also a
 bimodal distribution, while distribution of the scores along factors #2 and
 #4 are more unimodal .
 
+*** Correlation vs. causality
+
+As a final remark, please notice that the interpretations above are based
+on correlations.  In any case. we should imply that there is a causality in
+one direction or the other.  For instance, let us take factor #3, which was
+interpreted as being the “GR outcome.”  Of course, this does not mean that
+voters knew beforehand the outcome of the vote and cast their ballot
+accordingly, what would be a circular reasoning.  Keep in mind that
+correlation does not imply causation.
+
 * Conclusion
 
 The tally sheet of a Condorcet voting system allows for a multifaceted
