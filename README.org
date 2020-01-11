@@ -276,6 +276,14 @@ voters who scored high in the “systemd-preferred” options (negative value
 for factor #1) also scored high in the “community cohesion” direction
 (negative value for factor #2).
 
+We should issue a caveat here, as regards the assertion above.  It may be
+the case, as it is implicitly admitted in the previous paragraph, that
+voters who are more inclined to choose systemd-preferred solutions would
+also care more about community cohesion.  That may reflect the reality, but
+we could also consider that my previous interpretation of #2 as being the
+“community cohesion” factor is not a fully precise depiction of the
+situation.
+
 Just for the sake of clarity, let us explain the sens of negative values in
 the scores. Let us take, for instance, factor #2, which has positive values
 for options *D* and *H*.  Voters that have negative values along #2 would
