@@ -96,15 +96,16 @@ last choice. Do not enter a number smaller than 1 or larger than 8.
 
 In the EFA done in the present study, the value cast for each option can be
 seen as the “note” for that option and the data is appropriate for EFA.
-The values are bounded between 1 to 8 and each ballot contains,
-necessarily, a variable with value equal to 1.  This somehow “normalizes”
-the data, in the sense that the voter’s preferred option has always the value
-1 and all the other options are judged relatively to it.  Notice that the
-voting software would consider ballots like =12222222= and =18888888= as
-equivalent, but our analysis will consider then different, reflecting the
-possible intention of the voter (in the case of ballot =18888888=, options
-#2 to #8 have a much lower value, in respect to option #1, than in ballot
-=12222222=).
+The values are bounded between 1 to 8 and each ballot should contain,
+according to the vote instructions, at least one variable with value equal
+to 1 (this is the case for the large majority of ballots, except for one).
+This somehow “normalizes” the data, in the sense that the voter’s preferred
+option has value 1 and all the other options are judged relatively to it.
+Notice that the voting software would consider ballots like =12222222= and
+=18888888= as equivalent, but our analysis will consider them as different,
+reflecting the possible intention of the voter (in the case of ballot
+=18888888=, options #2 to #8 have a much lower value, in respect to option
+#1, than in ballot =12222222=).
 
 Instructions regarding the unranked choices were as follows:
 
