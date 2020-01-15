@@ -328,8 +328,10 @@ General Resolution: “Init systems and systemd.”
 
 Many thanks to Sébastien Villemot for his thoughtful comments and
 suggestions for improvement of the present study, as well as for revising
-the final text.  Thanks to Gregor Herrmann, Ana Guerrero López, and Martin
-Michlmayr for fixing typos.
+the final text.  Thanks to Taowa Munene-Tardif for pointing out that there
+was one ballot without value =1=.  Thanks to Gregor Herrmann, Ana Guerrero
+López, and Martin Michlmayr for fixing typos and to Sam Hartman for the
+helpful discussion on the results.
 
 * Addendum
 
