@@ -331,6 +331,20 @@ suggestions for improvement of the present study, as well as for revising
 the final text.  Thanks to Gregor Herrmann, Ana Guerrero López, and Martin
 Michlmayr for fixing typos.
 
+* Addendum
+
+After publication of this study, my attention has been drawn to a very
+important issue, regarding the interpretation of factor #2.  In the present
+study, I chose to name it the ‘community cohesion’ factor. This choice of
+denomination was done solely as a way to distinguish options D+H from the
+(apparently) more divisive options F+B and G+E.  It must be said that,
+firstly, this choice of naming is totally subjective and do not follow
+naturally from the EFA results.  Secondly, it must also be emphasized that
+the authors of options H and D may not have had ‘community cohesion’ in
+mind when they wrote their proposals.  Moreover, there is no guarantee that
+the community would attain a higher degree of cohesion, had either option H
+or D won the vote.
+
 * Code
 
 The code for producing the analysis is available in this Git repository.
